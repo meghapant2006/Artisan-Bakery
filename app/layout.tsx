@@ -7,8 +7,8 @@ import { CartProvider } from '@/components/cart-provider'
 import { Toaster } from '@/components/ui/toaster'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Artisan Bakery',
+  description: 'Delicious baked goods made with love',
   generator: 'v0.app',
 }
 
