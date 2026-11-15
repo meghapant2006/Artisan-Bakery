@@ -11,6 +11,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Badge } from "@/components/ui/badge"
 import { DietaryMark } from "@/components/dietary-mark"
 import { CartDrawer } from "@/components/cart-drawer"
+import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 import {
   Minus,
   Plus,
@@ -135,7 +136,7 @@ export default function CartPage() {
                       key={item.cartItemId || item.id}
                       className="flex gap-4 p-3 bg-muted/20 border border-border/80 rounded-xl"
                     >
-                      <img
+                      <ImageWithFallback
                         src={item.image || "/chocolate-layer-cake-with-ganache.jpg"}
                         alt={item.name}
                         className="w-20 h-20 object-cover rounded-xl border border-border shrink-0"

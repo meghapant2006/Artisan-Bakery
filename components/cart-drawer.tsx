@@ -21,13 +21,14 @@ import {
   CheckCircle2,
 } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 
 const UPSELL_ITEMS = [
   {
     id: 991,
     name: "Desi Ghee Nan Khatai Jar",
     price: 240,
-    image: "/oatmeal-raisin-cookies-on-plate.jpg",
+    image: "/desi-ghee-nankhatai.jpg",
     weight: "250g Jar",
     isEggless: true,
   },
@@ -142,10 +143,10 @@ export function CartDrawer() {
                   key={item.cartItemId || item.id}
                   className="flex gap-3 p-3 bg-card border border-border rounded-xl shadow-2xs hover:shadow-xs transition-shadow"
                 >
-                  <img
+                  <ImageWithFallback
                     src={item.image || "/chocolate-layer-cake-with-ganache.jpg"}
                     alt={item.name}
-                    className="w-18 h-18 object-cover rounded-lg shrink-0 border border-border"
+                    className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-lg shrink-0 border border-border"
                   />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-1">
@@ -227,7 +228,7 @@ export function CartDrawer() {
                       className="p-2 border border-border rounded-xl bg-muted/30 flex flex-col justify-between"
                     >
                       <div className="flex gap-2 items-center mb-1.5">
-                        <img
+                        <ImageWithFallback
                           src={up.image}
                           alt={up.name}
                           className="w-10 h-10 object-cover rounded-md shrink-0"

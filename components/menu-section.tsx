@@ -9,6 +9,7 @@ import { DietaryMark } from "@/components/dietary-mark"
 import { ProductModal, ProductData } from "@/components/product-modal"
 import { useCart } from "@/components/cart-provider"
 import { toast } from "@/hooks/use-toast"
+import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 import {
   Search,
   SlidersHorizontal,
@@ -99,7 +100,7 @@ export const ALL_MENU_ITEMS: ProductData[] = [
     category: "Cheesecakes & Slices",
     description: "Inspired by Defence Bakery's iconic Nocturne — intensely rich Belgian cocoa cheesecake with chocolate crumb crust.",
     price: 850,
-    image: "/new-york-cheesecake-with-graham-cracker-crust.jpg",
+    image: "/nocturne-chocolate-cheesecake.jpg",
     isEggless: false,
     tags: ["Defence Bakery Signature"],
   },
@@ -119,7 +120,7 @@ export const ALL_MENU_ITEMS: ProductData[] = [
     category: "Cheesecakes & Slices",
     description: "Silky unbaked cheesecake infused with Greek yogurt and topped with wild Canadian blueberry glaze.",
     price: 240,
-    image: "/new-york-cheesecake-with-graham-cracker-crust.jpg",
+    image: "/blueberry-cheesecake-slice.jpg",
     isEggless: true,
     tags: ["Slice", "Eggless"],
   },
@@ -131,7 +132,7 @@ export const ALL_MENU_ITEMS: ProductData[] = [
     category: "Savory & Patties",
     description: "Flaky golden puff pastry stuffed with spiced potato, peas, cumin, and coriander. Served piping hot.",
     price: 65,
-    image: "/apple-turnover-flaky-pastry.jpg",
+    image: "/golden-puff-patty.jpg",
     isEggless: true,
     tags: ["Hot Bake", "Pure Veg"],
   },
@@ -141,7 +142,7 @@ export const ALL_MENU_ITEMS: ProductData[] = [
     category: "Savory & Patties",
     description: "Buttery puff pastry enveloping smoky cottage cheese cubes tossed in tandoori spices and mint.",
     price: 85,
-    image: "/apple-turnover-flaky-pastry.jpg",
+    image: "/golden-puff-patty.jpg",
     isEggless: true,
     tags: ["Must Try", "Pure Veg"],
   },
@@ -171,7 +172,7 @@ export const ALL_MENU_ITEMS: ProductData[] = [
     category: "Savory & Patties",
     description: "Classic English-style seasoned chicken sausage wrapped in crisp French puff pastry with mustard glaze.",
     price: 110,
-    image: "/apple-turnover-flaky-pastry.jpg",
+    image: "/golden-puff-patty.jpg",
     isEggless: false,
     tags: ["Non-Veg", "Classic"],
   },
@@ -287,7 +288,7 @@ export const ALL_MENU_ITEMS: ProductData[] = [
     category: "Cookies & Biscuits",
     description: "Traditional Indian shortbread biscuit made with pure desi cow ghee, cardamom, and pistachio shavings.",
     price: 260,
-    image: "/shortbread-cookies-buttery-scottish.jpg",
+    image: "/desi-ghee-nankhatai.jpg",
     isEggless: true,
     tags: ["Desi Ghee", "Festive Favorite"],
   },
@@ -297,7 +298,7 @@ export const ALL_MENU_ITEMS: ProductData[] = [
     category: "Cookies & Biscuits",
     description: "The quintessential Indian tea-time cookie flavored with roasted cumin seeds and fine rock salt.",
     price: 220,
-    image: "/oatmeal-raisin-cookies-on-plate.jpg",
+    image: "/snickerdoodle-cookies-cinnamon-sugar.jpg",
     isEggless: true,
     tags: ["Tea Time Essential"],
   },
@@ -329,7 +330,7 @@ export const ALL_MENU_ITEMS: ProductData[] = [
     category: "Festive Hampers",
     description: "A luxury keepsake box containing Desi Ghee Nan Khatai Jar, Belgian Dark Truffles, Almond Biscotti, and Sourdough Crisps.",
     price: 1450,
-    image: "/bakery-team-working.jpg",
+    image: "/luxury-bakery-gift-hamper.jpg",
     isEggless: true,
     tags: ["Luxury Packaging", "Perfect Gift"],
   },
@@ -339,7 +340,7 @@ export const ALL_MENU_ITEMS: ProductData[] = [
     category: "Festive Hampers",
     description: "Curated gift set with 2 Croissants, 2 Eclairs, Assorted Cookie Jar, and Handcrafted Belgian Chocolate Bark.",
     price: 1200,
-    image: "/morning-coffee-pastry-setup.jpg",
+    image: "/grand-patisserie-box.jpg",
     isEggless: true,
     tags: ["Gift Box"],
   },
@@ -524,10 +525,10 @@ export function MenuSection() {
                     onClick={() => openCustomizeModal(item)}
                     className="relative aspect-[4/3] overflow-hidden bg-muted/30 cursor-pointer"
                   >
-                    <img
+                    <ImageWithFallback
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
 
                     {/* Dietary badge */}

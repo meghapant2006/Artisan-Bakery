@@ -9,6 +9,7 @@ import { ProductModal, ProductData } from "@/components/product-modal"
 import { ShoppingBag, Plus, Sparkles, Star } from "lucide-react"
 import { useCart } from "@/components/cart-provider"
 import { toast } from "@/hooks/use-toast"
+import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 
 const POPULAR_ITEMS: ProductData[] = [
   {
@@ -37,7 +38,7 @@ const POPULAR_ITEMS: ProductData[] = [
     category: "Savory & Patties",
     description: "Flaky golden puff pastry bursting with smoky cottage cheese in tandoori spices.",
     price: 85,
-    image: "/apple-turnover-flaky-pastry.jpg",
+    image: "/golden-puff-patty.jpg",
     isEggless: true,
     tags: ["Hot Bakehouse Snack"],
   },
@@ -57,7 +58,7 @@ const POPULAR_ITEMS: ProductData[] = [
     category: "Cookies & Biscuits",
     description: "Melt-in-mouth traditional cardamom and pistachio shortbread crafted with pure cow ghee.",
     price: 260,
-    image: "/shortbread-cookies-buttery-scottish.jpg",
+    image: "/desi-ghee-nankhatai.jpg",
     isEggless: true,
     tags: ["Tea-Time Classic"],
   },
@@ -131,10 +132,10 @@ export function FeaturedSection() {
                   onClick={() => handleOpenCustomize(item)}
                   className="relative aspect-[4/3] overflow-hidden bg-muted/30 cursor-pointer"
                 >
-                  <img
+                  <ImageWithFallback
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3 flex items-center gap-1.5">
                     <div className="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xs p-1 rounded-md shadow-xs">

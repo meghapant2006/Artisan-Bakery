@@ -13,6 +13,7 @@ import {
   ShoppingBag,
   Sparkles,
 } from "lucide-react"
+import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 
 const OUTLETS = [
   {
@@ -47,7 +48,7 @@ const OUTLETS = [
     hours: "8:30 AM – 9:30 PM (Mon–Sat)",
     phone: "+91 120 411 6200",
     mapQuery: "Sector+62+Noida+Candor+TechSpace",
-    image: "/bakery-showcase-display-case.jpg",
+    image: "/artisan-bakery-interior-with-fresh-bread-and-pastr.jpg",
     tags: ["Express Pickup", "Corporate Orders", "Hot Savories"],
     highlights: "Perfect for quick breakfast croissants, lunchtime mushroom & paneer patties, and corporate celebration cakes.",
   },
@@ -77,7 +78,7 @@ export function OutletsSection() {
             >
               <div>
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
+                  <ImageWithFallback
                     src={outlet.image}
                     alt={outlet.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

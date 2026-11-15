@@ -1,6 +1,7 @@
 ﻿import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Clock, Mail } from "lucide-react"
+import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 
 export function ContactSection() {
   return (
@@ -89,7 +90,7 @@ export function ContactSection() {
           <div className="grid lg:grid-cols-2 gap-8">
             <Card className="p-6 hover:shadow-xl transition-shadow">
               <div className="aspect-video rounded-lg overflow-hidden mb-4">
-                <img
+                <ImageWithFallback
                   src="/cozy-bakery-storefront-with-warm-lighting-and-disp.jpg"
                   alt="Bakery storefront"
                   className="w-full h-full object-cover"

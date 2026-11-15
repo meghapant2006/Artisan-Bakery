@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card"
 import { Heart, Award, Clock } from "lucide-react"
+import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 
 export function AboutSection() {
   return (
@@ -10,7 +11,7 @@ export function AboutSection() {
             {/* Image */}
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-                <img
+                <ImageWithFallback
                   src="/artisan-baker-kneading-dough.jpg"
                   alt="Our bakery team at work"
                   className="w-full h-full object-cover"

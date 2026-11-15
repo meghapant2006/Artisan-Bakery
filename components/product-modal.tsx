@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge"
 import { Plus, Minus, Check, Sparkles, ShieldCheck, Heart, ShoppingBag } from "lucide-react"
 import { useCart, CartItem } from "@/components/cart-provider"
 import { toast } from "@/hooks/use-toast"
+import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 
 export interface ProductData {
   id: number | string
@@ -152,11 +153,11 @@ export function ProductModal({ product, open, onOpenChange }: ProductModalProps)
       <DialogContent className="max-w-2xl max-h-[92vh] overflow-y-auto p-0 rounded-2xl gap-0">
         <div className="grid md:grid-cols-2">
           {/* Product Image Column */}
-          <div className="relative bg-muted/40 flex items-center justify-center min-h-[260px] md:min-h-full overflow-hidden">
-            <img
+          <div className="relative bg-muted/40 min-h-[260px] md:min-h-[380px] h-full w-full overflow-hidden">
+            <ImageWithFallback
               src={product.image}
               alt={product.name}
-              className="w-full h-full object-cover max-h-[360px] md:max-h-full"
+              className="w-full h-full object-cover absolute inset-0"
             />
             <div className="absolute top-3 left-3 flex flex-col gap-1.5">
               <Badge variant={isEggless ? "veg" : "egg"} className="shadow-xs backdrop-blur-md bg-white/90">

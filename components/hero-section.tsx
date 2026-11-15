@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Cake, Sparkles, Star, Truck, ShieldCheck } from "lucide-react"
+import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 
 export function HeroSection() {
   const scrollTo = (id: string) => {
@@ -16,13 +17,14 @@ export function HeroSection() {
     <section id="home" className="relative w-full min-h-[92vh] flex items-center justify-center overflow-hidden pt-28 pb-16">
       {/* Background Hero Image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <ImageWithFallback
           src="/bakery-showcase-display-case.jpg"
-          alt="Fresh cakes, breads and pastries"
-          className="w-full h-full object-cover scale-105 animate-subtle-zoom"
+          alt="Fresh cakes, breads and pastries showcase"
+          loading="eager"
+          className="w-full h-full object-cover scale-105 transition-transform duration-700"
         />
-        {/* Dark warm gradient overlay for high contrast and readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/50" />
+        {/* Warm bakery gradient overlay that protects text readability without crushing the image brightness */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/35" />
       </div>
 
       {/* Hero content */}

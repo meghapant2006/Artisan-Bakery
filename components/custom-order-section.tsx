@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Cake, Heart, Phone } from "lucide-react"
+import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 
 export function CustomOrderSection() {
   return (
@@ -28,7 +29,7 @@ export function CustomOrderSection() {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="overflow-hidden hover:shadow-xl transition-shadow group">
               <div className="aspect-[4/3] overflow-hidden">
-                <img
+                <ImageWithFallback
                   src="/funfetti-birthday-cake-with-colorful-sprinkles.jpg"
                   alt="Custom birthday cake"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -54,7 +55,7 @@ export function CustomOrderSection() {
 
             <Card className="overflow-hidden hover:shadow-xl transition-shadow group">
               <div className="aspect-[4/3] overflow-hidden">
-                <img
+                <ImageWithFallback
                   src="/custom-wedding-cake-elegant.jpg"
                   alt="Elegant wedding cake"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
